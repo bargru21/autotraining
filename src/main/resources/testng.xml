@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite 1" verbose="1">
+    <test name="Regression 1">
+        <classes>
+            <class name="auto.training.tests.FindCourseTest"/>
+        </classes>
+    </test>
+</suite>
