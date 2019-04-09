@@ -25,12 +25,16 @@ public class CourseFilter extends BasePage {
     @FindBy(id = "edit-reset")
     private WebElement resetFiltersButton;
 
+    @FindBy(className = "privacy-dismiss")
+    private WebElement closePrivacyPopup;
+
     public void applyFilters() {
         applyFiltersButton.click();
         wait.until(visibilityOf(resetFiltersButton));
     }
 
     public CourseFilter chooseInstructor(String instructorName) {
+        closePrivacyPopup.click();
         instructorsDropdown.click();
         driver.findElement(By.xpath("//li[text()='" + instructorName + "']")).click();
         return this;
